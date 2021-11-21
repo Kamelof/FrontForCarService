@@ -1,16 +1,35 @@
 import * as axios from "axios";
 
 
-const instance = axios.create({
+const http = axios.create({
     baseURL: '',
     headers: {}
 });
 
-export const carsAPI = {
-    getUsers() {
-        return instance.get(`cars`)
-            .then(response => {
-                return response.data;
-            });
+class CarsService {
+    async getAll() {
+        return await http.get("/tutorials");
     }
+
+    async get(id) {
+        return http.get(`/tutorials/${id}`);
+    }
+
+    async create(data) {
+        return http.post("/tutorials", data);
+    }
+
+    async update(data) {
+        return http.put("/tutorials", data);
+    }
+
+    async delete(id) {
+        return http.delete(`/tutorials/${id}`);
+    }
+
+    async deleteAll() {
+        return http.delete(`/tutorials`);
+    }
+
 }
+export default new CarsService();
