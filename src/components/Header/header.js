@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./header.module.css"
+import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
     return (
@@ -15,7 +16,7 @@ const Header = (props) => {
 
                 <div className={style.buttonBlock + ' ' + style.allBorder}>
                     <div className={style.allBorder}>
-                        <button>One more button</button>
+                        <NavLink to="/cars">Cars</NavLink>
                     </div>
                     <div className={style.signInBlock + ' ' + style.allBorder}>
                         <button className={style.signIn}>sign in</button>

@@ -14,7 +14,9 @@ const Cars = (props) => {
                 <div className={style.car}>Car7</div>
                 <div className={style.car}>Car8</div>
                 <div className={style.car}>Car9</div>
-
+            </div>
+            <div className={style.buttonBlock}>
+                <button>Load more</button>
             </div>
         </div>
     )
