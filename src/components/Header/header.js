@@ -16,7 +16,7 @@ const Header = (props) => {
 
                 <div className={style.buttonBlock + ' ' + style.allBorder}>
                     <div className={style.allBorder}>
-                        <NavLink to="/cars">Cars</NavLink>
+                        CARS
                     </div>
                     <div className={style.signInBlock + ' ' + style.allBorder}>
                         <button className={style.signIn}>sign in</button>

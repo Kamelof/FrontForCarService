@@ -1,50 +1,25 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import style from "./search.module.css"
-import CarService from "../../../API/api"
+import {NavLink} from "react-router-dom";
 
-class Search extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            currentTutorial: {
-                id: null,
-                releasDate: "",
-                title: "",
-                price: null,
-                weight: null,
-                colorTitle: "",
-                carBodyTitle: "",
-            },
-            message: ""
-        };
-    }
-    componentDidMount(props) {
-    }
-    render(props) {
-        const { currentTutorial } = this.state;
-
-        return(
-            <div>
+const Search = (props) => {
+    const [inputValue,setInputValue] = useState('')
+    let a = inputValue
+    console.log('inputValue',a)
+    return (
+        <div>
                 <div className={style.allBorder}>
-                    <div className={style.allBorder}>
-                        <div>
-                            <input type="text" placeholder="Search"/>
-                        </div>
-                        <div>
-                            <button>Search</button>
-                        </div>
+                    <div>
+                        <input placeholder={"Search"} name={"search"} value={inputValue}
+                               onChange={(e)=>{setInputValue(e.target.value)}}/>
                     </div>
-                    <div className={style.allBorder}>
-                        <div>
-                            Text
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+                    <div>{a = '' ? <NavLink to="/cars">CarsShow</NavLink>:<></> }
 
+                    </div>
+                    <div></div>
+                </div>
+        </div>
+    )
 }
 
 export default Search;
